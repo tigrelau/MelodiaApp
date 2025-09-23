@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MelodiaApp</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bg-dark": "#1A1A1A",
+              "bg-elevated": "#282828",
+              "melody-neon-pink": "#FF008D",
+              "melody-lighter-pink": "#fb3984",
+              "melody-highlight-yellow": "#FEEA00",
+              "melody-complement-orange": "#FF6600",
+              "text-secondary": "#C7C7C7",
+            },
+            fontFamily: {
+              title: ["Syne", "sans-serif"],
+              body: ["Archivo", "sans-serif"],
+              poppins: ["Poppins, sans-serif"],
+              cormorant: ["Cormorant Garamond, serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="shortcut icon" href="/img/melodialogo.png" type="image.png" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="container mx-auto px-4 pt-8 pb-4">
+      <nav class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <div class="text-2xl font-title font-bold text-white">Melodia</div>
+        </div>
+
+        <div
+          class="hidden lg:flex items-center space-x-2 p-1 rounded-full bg-bg-dark"
+        >
+          <a
+            href="#"
+            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-white text-bg-dark"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-white transition duration-300"
+            >Playlists</a
+          >
+          <a
+            href="#"
+            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-white transition duration-300"
+            >Artistas</a
+          >
+          <a
+            href="#"
+            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-white transition duration-300"
+            >Diferenciais</a
+          >
+        </div>
+
+        <div class="lg:flex items-center space-x-3">
+          <button
+            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-white transition duration-300"
+          >
+            Login
+          </button>
+          <button
+            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-white text-bg-dark hover:bg-melody-neon-pink hover:text-white transition duration-300 shadow-lg"
+          >
+            Sign up
+          </button>
+        </div>
+
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden text-white text-2xl p-2 rounded-lg hover:bg-bg-elevated transition duration-300"
+        >
+          &#9776;
+        </button>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden mt-4 pt-4 border-t border-gray-700 bg-bg-dark"
+      >
+        <div class="flex flex-col space-y-3">
+          <a
+            href="#"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+          >
+            Playlists
+          </a>
+          <a
+            href="#"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+          >
+            Artistas
+          </a>
+          <a
+            href="#"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+          >
+            Diferenciais
+          </a>
+
+          <button
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg bg-melody-neon-pink text-bg-dark mt-4 hover:bg-melody-complement-orange hover:text-white"
+          >
+            Baixe o App!
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-poppins text-melody-lighter-pink">
+          Melodia <br />
+          Sua música, Sua Forma
+        </h1>
+      </div>
+
+      <div class="flex justify-center items-center space-x-6">
+        <div
+          class="w-48 aspect-square bg-gray-800 rounded-3xl transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+        >
+          <div
+            class="w-full h-full bg-cover bg-center"
+            style="background-image: url('/img/sadealbumcover1.jpeg')"
+          ></div>
+          <div
+            class="absolute bottom-4 left-4 text-white text-lg font-bold"
+          ></div>
+        </div>
+
+        <div
+          class="w-48 aspect-square bg-gray-800 rounded-3xl transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+        >
+          <div
+            class="w-full h-full bg-cover bg-center"
+            style="background-image: url('/img/illitbombcover.jpeg')"
+          ></div>
+          <div
+            class="absolute bottom-4 left-4 text-white text-lg font-bold"
+          ></div>
+        </div>
+
+        <div
+          class="w-48 aspect-square bg-gray-800 rounded-3xl transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+        >
+          <div
+            class="w-full h-full bg-cover bg-center"
+            style="background-image: url('/img/outro-album.jpeg')"
+          ></div>
+          <div
+            class="absolute bottom-4 left-4 text-white text-lg font-bold"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <script src="/src/js/script.js"></script>
+  </body>
+</html>
