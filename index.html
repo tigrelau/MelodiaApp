@@ -140,49 +140,107 @@
 
     <div class="container mx-auto">
       <div class="text-center mb-12">
-        <h1 class="text-4xl font-poppins text-melody-lighter-pink">
+        <h1 class="text-4xl font-poppins text-melody-complement-orange">
           Melodia <br />
-          Sua música, Sua Forma
+          <span class="text-melody-neon-pink">Sua música, Sua forma</span>
         </h1>
       </div>
 
-      <div class="flex justify-center items-center space-x-6">
-        <div
-          class="w-48 aspect-square bg-gray-800 rounded-3xl transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
-        >
-          <div
-            class="w-full h-full bg-cover bg-center"
-            style="background-image: url('/img/sadealbumcover1.jpeg')"
-          ></div>
-          <div
-            class="absolute bottom-4 left-4 text-white text-lg font-bold"
-          ></div>
-        </div>
+      <section class="mt-16 md:mt-24">
+        <div class="relative group">
+          <button
+            id="left-arrow"
+            class="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-melody-neon-pink text-bg-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            <svg
+              class="h-5 w-5 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+            >
+              <path
+                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+              />
+            </svg>
+          </button>
 
-        <div
-          class="w-48 aspect-square bg-gray-800 rounded-3xl transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
-        >
           <div
-            class="w-full h-full bg-cover bg-center"
-            style="background-image: url('/img/illitbombcover.jpeg')"
-          ></div>
-          <div
-            class="absolute bottom-4 left-4 text-white text-lg font-bold"
-          ></div>
-        </div>
+            id="carousel-container"
+            class="w-max flex space-x-6 overflow-x-auto px-4 md:px-0 hide-scrollbar"
+          >
+            <div class="flex flex-row space-x-6 w-max">
+              <div class="flex-shrink-0 w-48 md:w-64">
+                <div class="relative w-full aspect-square">
+                  <img
+                    src="/img/sadealbumcover1.jpeg"
+                    alt="Sade - Love Deluxe"
+                    class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-48 md:w-64">
+                <div class="relative w-full aspect-square">
+                  <img
+                    src="/img/illitbombcover.jpeg"
+                    alt="ILLIT - bomb"
+                    class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-48 md:w-64">
+                <div class="relative w-full aspect-square">
+                  <img
+                    src="/img/cortisDebut.jpeg"
+                    alt="CORTIS - COLOR OUTSIDE THE LINES"
+                    class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-48 md:w-64">
+                <div class="relative w-full aspect-square">
+                  <img
+                    src="/img/aespaArmageddon.jpeg"
+                    alt="aespa - Armageddon"
+                    class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-48 md:w-64">
+                <div class="relative w-full aspect-square">
+                  <img
+                    src="/img/jennieRuby.jpeg"
+                    alt="JENNIE - Ruby"
+                    class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+              <div class="flex-shrink-0 w-48 md:w-64">
+                <div class="relative w-full aspect-square">
+                  <img
+                    src="/img/twiceWithYouth.jpg"
+                    alt="TWICE - With You-th"
+                    class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div
-          class="w-48 aspect-square bg-gray-800 rounded-3xl transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
-        >
-          <div
-            class="w-full h-full bg-cover bg-center"
-            style="background-image: url('/img/cortisDebut.jpeg')"
-          ></div>
-          <div
-            class="absolute bottom-4 left-4 text-white text-lg font-bold"
-          ></div>
+          <button
+            id="right-arrow"
+            class="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-melody-neon-pink text-bg-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          >
+            <svg
+              class="h-5 w-5 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+            >
+              <path
+                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+              />
+            </svg>
+          </button>
         </div>
-      </div>
+      </section>
     </div>
     <script src="/src/js/script.js"></script>
   </body>
