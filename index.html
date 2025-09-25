@@ -44,7 +44,7 @@
     <header class="container mx-auto px-4 pt-8 pb-4">
       <nav class="flex justify-between items-center h-16">
         <div class="flex items-center space-x-2">
-          <div class="text-2xl font-title font-bold text-white">Melodia</div>
+          <div class="text-4xl font-title font-bold text-white">Melodia</div>
         </div>
 
         <div
@@ -77,7 +77,7 @@
           >
         </div>
 
-        <div class="lg:flex items-center space-x-3">
+        <div class="hidden lg:flex items-center space-x-3">
           <button
             class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-complement-orange transition duration-300"
           >
@@ -105,34 +105,49 @@
         <div class="flex flex-col space-y-3">
           <a
             href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
           >
             Sobre
           </a>
           <a
             href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
           >
             Funcionalidades
           </a>
           <a
             href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
           >
             Depoimentos
           </a>
           <a
             href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:bg-melody-neon-pink transition duration-300"
+            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
           >
             Contato
           </a>
 
-          <button
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg bg-melody-neon-pink text-bg-dark mt-4 hover:bg-melody-complement-orange hover:text-white"
-          >
-            Baixe o App!
-          </button>
+          <div class="flex flex-col space-y-3 pt-3">
+            <button
+              class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-complement-orange transition duration-300"
+            >
+              Login
+            </button>
+            <button
+              class="px-4 py-3 text-base font-body font-semibold rounded-lg text-bg-dark bg-white text-center hover:bg-melody-complement-orange transition duration-300"
+            >
+              Sign up
+            </button>
+          </div>
+
+          <div class="flex flex-col space-y-1">
+            <button
+              class="px-4 py-3 text-base font-body font-semibold rounded-lg bg-melody-neon-pink text-bg-dark mt-4 hover:bg-melody-complement-orange hover:text-white"
+            >
+              Baixe o App!
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -147,9 +162,16 @@
             >Sua música, Sua forma</span
           >
         </h1>
+        <p
+          class="mt-4 text-lg md:text-x1 font-body text-text-secondary mx-auto"
+        >
+          Melodia é a plataforma de streaming para a nova geração.<br />
+          Qualidade de som superior e um radar inteligente que te conecta a
+          novos artistas à playlist perfeita para cada momento da sua vida.
+        </p>
       </div>
 
-      <section class="mt-16 md:mt-24">
+      <section class="mt-12">
         <div class="relative group">
           <button
             id="left-arrow"
@@ -184,6 +206,15 @@
                 <img
                   src="/img/illitbombcover.jpeg"
                   alt="ILLIT - bomb"
+                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                />
+              </div>
+            </div>
+            <div class="flex-shrink-0 w-48 md:w-64">
+              <div class="relative w-full aspect-square">
+                <img
+                  src="/img/fromZero.jpeg"
+                  alt="Linkin Park - From Zero"
                   class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
                 />
               </div>
@@ -240,6 +271,39 @@
               />
             </svg>
           </button>
+        </div>
+        <div class="mt-8 flex justify-center">
+          <button
+            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-melody-neon-pink text-white hover:bg-melody-complement-orange hover:text-bg-dark transition duration-300 shadow-lg"
+          >
+            OUVIR AGORA!
+          </button>
+        </div>
+      </section>
+      <section class="mt-24 mb-16 px-4">
+        <div class="container mx-auto">
+          <h2
+            class="font-poppins text-4xl md:text-5xl font-bold text-white mb-8 text-center"
+          >
+            Experimente a
+            <span
+              class="font-title text-melody-complement-orange font-bold text-4xl md:text-6xl"
+              >Melodia</span
+            >
+          </h2>
+          <p
+            class="text-center text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto mb-12"
+          >
+            Descubra uma interface intuitiva e recursos inovadores que
+            transformarão sua maneira de ouvir música.
+          </p>
+          <div class="flex justify-center">
+            <img
+              src="/img/appMelodiaDesign.png"
+              alt="Captura de tela do aplicativo Melodia"
+              class="rounded-lg shadow-xl max-w-full h-auto md:max-w-4xl"
+            />
+          </div>
         </div>
       </section>
     </div>
