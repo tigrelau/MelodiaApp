@@ -40,3 +40,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Script para o formulário de contato
+document
+  .getElementById("formulario-contato")
+  .addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const dadosFormulario = new FormData(this);
+    console.log("Dados do formulário:", {
+      nome: dadosFormulario.get("nome"),
+      email: dadosFormulario.get("email"),
+      assunto: dadosFormulario.get("assunto"),
+      mensagem: dadosFormulario.get("mensagem"),
+      marketing: dadosFormulario.get("marketing"),
+    });
+
+    const mensagemSucesso = document.getElementById("sucesso-formulario");
+    mensagemSucesso.classList.remove("hidden");
+    mensagemSucesso.classList.add("animate-fade-in");
+
+    this.style.opacity = "0.7";
+    setTimeout(() => {
+      this.reset();
+      this.style.opacity = "1";
+    }, 300);
+
+    setTimeout(() => {
+      mensagemSucesso.classList.add("hidden");
+      mensagemSucesso.classList.remove("animate-fade-in");
+    }, 5000);
+  });
+
+document.getElementById("marketing").addEventListener("change", function () {
+  const customCheckbox = document.querySelector(".checkbox-custom");
+  if (this.checked) {
+    customCheckbox.style.transform = "scale(1.1)";
+    setTimeout(() => {
+      customCheckbox.style.transform = "scale(1)";
+    }, 150);
+  }
+});
