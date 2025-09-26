@@ -59,7 +59,7 @@ MelodiaApp/
 
 O MelodiaApp está disponível online via GitHub Pages. Acesse o site pelo link abaixo:
 
-[🔗 Clique aqui para acessar o MelodiaApp](https://<seu-usuario>.github.io/<nome-do-repositorio>/)
+[🔗 Clique aqui para acessar o MelodiaApp](https://tigrelau.github.io/MelodiaApp/)
 
 ## Integrantes
 
