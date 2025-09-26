@@ -1,755 +1,897 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MelodiaApp</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MelodiaApp</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "bg-dark": "#1A1A1A",
-              "bg-elevated": "#282828",
-              "melody-neon-pink": "#FF008D",
-              "melody-lighter-pink": "#fb3984",
-              "melody-complement-orange": "#FF6600",
-              "text-secondary": "#C7C7C7",
-            },
-            fontFamily: {
-              title: ["Syne", "sans-serif"],
-              body: ["Archivo", "sans-serif"],
-              poppins: ["Poppins, sans-serif"],
-              cormorant: ["Cormorant Garamond, serif"],
-            },
-          },
-        },
-      };
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            "bg-dark": "#1A1A1A",
+                            "bg-elevated": "#282828",
+                            "melody-neon-pink": "#FF008D",
+                            "melody-lighter-pink": "#fb3984",
+                            "melody-complement-orange": "#FF6600",
+                            "text-secondary": "#C7C7C7",
+                        },
+                        fontFamily: {
+                            title: ["Syne", "sans-serif"],
+                            body: ["Archivo", "sans-serif"],
+                            poppins: ["Poppins, sans-serif"],
+                            cormorant: ["Cormorant Garamond, serif"],
+                        },
+                    },
+                },
+            };
+        </script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
 
-    <link rel="shortcut icon" href="/img/melodialogo.png" type="image.png" />
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+        <link
+            rel="shortcut icon"
+            href="/img/melodialogo.png"
+            type="image.png"
+        />
+        <link rel="stylesheet" href="/src/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-  <body>
-    <header class="container mx-auto px-4 pt-8 pb-4">
-      <nav class="flex justify-between items-center h-16">
-        <div class="flex items-center space-x-4">
-          <img
-            src="/img/melodialogo.png"
-            alt="Logo Melodia"
-            class="h-8 lg:h-10"
-          />
-          <div
-            class="text-4xl font-title font-bold text-melody-complement-orange"
-          >
-            Melodia
-          </div>
-        </div>
+    <body>
+        <header class="container mx-auto px-4 pt-8 pb-4">
+            <nav class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <img
+                        src="/img/melodialogo.png"
+                        alt="Logo Melodia"
+                        class="h-8 lg:h-10"
+                    />
+                    <div class="text-4xl font-title font-bold text-white">
+                        Melodia
+                    </div>
+                </div>
 
-        <div
-          class="hidden lg:flex items-center space-x-2 p-1 rounded-full bg-bg-dark"
-        >
-          <a
-            href="#"
-            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
-            >Sobre</a
-          >
-          <a
-            href="#"
-            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
-            >Funcionalidades</a
-          >
-          <a
-            href="#"
-            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
-            >Depoimentos</a
-          >
-          <a
-            href="#"
-            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
-            >Contato</a
-          >
-          <a
-            href="#"
-            class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-bg-dark hover:bg-melody-neon-pink transition duration-300"
-            >Baixe o App!</a
-          >
-        </div>
+                <div
+                    class="hidden lg:flex items-center space-x-2 p-1 rounded-full bg-bg-dark"
+                >
+                    <a
+                        href="#sobre"
+                        class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
+                        >Sobre</a
+                    >
+                    <a
+                        href="#funcionalidades"
+                        class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
+                        >Funcionalidades</a
+                    >
+                    <a
+                        href="#depoimentos"
+                        class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
+                        >Depoimentos</a
+                    >
+                    <a
+                        href="#contato"
+                        class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-lighter-pink transition duration-300"
+                        >Contato</a
+                    >
+                    <a
+                        href="#"
+                        class="px-5 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-bg-dark hover:bg-melody-neon-pink transition duration-300"
+                        >Baixe o App!</a
+                    >
+                </div>
 
-        <div class="hidden lg:flex items-center space-x-3">
-          <button
-            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-complement-orange transition duration-300"
-          >
-            Login
-          </button>
-          <button
-            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-white text-bg-dark hover:bg-melody-complement-orange hover:text-white transition duration-300 shadow-lg"
-          >
-            Sign up
-          </button>
-        </div>
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button
+                        class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-bg-elevated text-text-secondary hover:text-melody-complement-orange transition duration-300"
+                    >
+                        Login
+                    </button>
+                    <button
+                        class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-white text-bg-dark hover:bg-melody-complement-orange hover:text-white transition duration-300 shadow-lg"
+                    >
+                        Sign up
+                    </button>
+                </div>
 
-        <button
-          id="mobile-menu-button"
-          class="lg:hidden text-white text-2xl p-2 rounded-lg hover:bg-bg-elevated transition duration-300"
-        >
-          &#9776;
-        </button>
-      </nav>
-
-      <div
-        id="mobile-menu"
-        class="hidden lg:hidden mt-4 pt-4 border-t border-gray-700 bg-bg-dark"
-      >
-        <div class="flex flex-col space-y-3">
-          <a
-            href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
-          >
-            Sobre
-          </a>
-          <a
-            href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
-          >
-            Funcionalidades
-          </a>
-          <a
-            href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
-          >
-            Depoimentos
-          </a>
-          <a
-            href="#"
-            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
-          >
-            Contato
-          </a>
-
-          <div class="flex flex-col space-y-3 pt-3">
-            <button
-              class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-complement-orange transition duration-300"
-            >
-              Login
-            </button>
-            <button
-              class="px-4 py-3 text-base font-body font-semibold rounded-lg text-bg-dark bg-white text-center hover:bg-melody-complement-orange transition duration-300"
-            >
-              Sign up
-            </button>
-          </div>
-
-          <div class="flex flex-col space-y-1">
-            <button
-              class="px-4 py-3 text-base font-body font-semibold rounded-lg bg-melody-neon-pink text-bg-dark mt-4 hover:bg-melody-complement-orange hover:text-white"
-            >
-              Baixe o App!
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <div class="container mx-auto">
-      <div class="text-center mb-12">
-        <h1
-          class="text-4xl font-poppins font-semibold text-melody-complement-orange"
-        >
-          Melodia <br />
-          <span class="text-melody-neon-pink font-poppins font-normal"
-            >Sua música, Sua forma</span
-          >
-        </h1>
-        <p
-          class="mt-4 text-lg md:text-x1 font-body text-text-secondary mx-auto"
-        >
-          Melodia é a plataforma de streaming para a nova geração.<br />
-          Qualidade de som superior e um radar inteligente que te conecta a
-          novos artistas à playlist perfeita para cada momento da sua vida.
-        </p>
-      </div>
-
-      <section class="mt-12">
-        <div class="relative group">
-          <button
-            id="left-arrow"
-            class="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-melody-neon-pink text-bg-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          >
-            <svg
-              class="h-5 w-5 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 320 512"
-            >
-              <path
-                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
-              />
-            </svg>
-          </button>
-
-          <div
-            id="carousel-container"
-            class="flex space-x-6 overflow-x-auto lg:overflow-x-hidden px-4 md:px-0 minimalist-scrollbar pb-2"
-          >
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/sadealbumcover1.jpeg"
-                  alt="Sade - Love Deluxe"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/illitbombcover.jpeg"
-                  alt="ILLIT - bomb"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/fromZero.jpeg"
-                  alt="Linkin Park - From Zero"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/cortisDebut.jpeg"
-                  alt="CORTIS - COLOR OUTSIDE THE LINES"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/aespaArmageddon.jpeg"
-                  alt="aespa - Armageddon"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/jennieRuby.jpeg"
-                  alt="JENNIE - Ruby"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-            <div class="flex-shrink-0 w-48 md:w-64">
-              <div class="relative w-full aspect-square">
-                <img
-                  src="/img/twiceWithYouth.jpg"
-                  alt="TWICE - With You-th"
-                  class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <button
-            id="right-arrow"
-            class="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-melody-neon-pink text-bg-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          >
-            <svg
-              class="h-5 w-5 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 320 512"
-            >
-              <path
-                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-8 flex justify-center">
-          <button
-            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-melody-neon-pink text-white hover:bg-melody-complement-orange hover:text-bg-dark transition duration-300 shadow-lg"
-          >
-            OUVIR AGORA!
-          </button>
-        </div>
-      </section>
-      <section class="mt-24 mb-16 px-4">
-        <div class="container mx-auto">
-          <h2
-            class="font-poppins text-4xl md:text-5xl font-bold text-white mb-8 text-center"
-          >
-            Experimente a
-            <span
-              class="font-title text-melody-complement-orange font-bold text-4xl md:text-6xl"
-              >Melodia</span
-            >
-          </h2>
-          <p
-            class="text-center text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto mb-12"
-          >
-            Descubra uma interface intuitiva e recursos inovadores que
-            transformarão sua maneira de ouvir música.
-          </p>
-          <div class="flex justify-center">
-            <img
-              src="/img/appMelodiaDesign.png"
-              alt="Captura de tela do aplicativo Melodia"
-              class="rounded-lg shadow-xl max-w-full h-auto md:max-w-4xl"
-            />
-          </div>
-        </div>
-      </section>
-      <section class="mt-24 mb-16 px-4">
-        <div class="container mx-auto">
-          <h2
-            class="font-poppins text-4xl md:text-5xl font-bold text-white mb-4 text-center"
-          >
-            As Funcionalidades que<br class="lg:hidden" />
-            <span class="font-title font-bold text-melody-complement-orange"
-              >Você Vai Amar</span
-            >
-          </h2>
-          <p
-            class="text-center text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto mb-12"
-          >
-            Descubra uma nova forma de ouvir música com as ferramentas
-            exclusivas do Melodia.
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-              class="p-8 bg-bg-elevated rounded-xl flex flex-col items-center text-center transition duration-300 hover:scale-[1.02] hover:shadow-2xl"
-            >
-              <div
-                class="w-16 h-16 bg-melody-neon-pink rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_5px_rgba(255,0,141,0.3)] animate-pulse"
-              >
-                <i class="fa-solid fa-headphones text-bg-dark text-2xl"></i>
-              </div>
-              <h3 class="font-poppins text-2xl font-bold text-white mb-2">
-                Qualidade de Som Superior
-              </h3>
-              <p class="font-body text-text-secondary">
-                Áudio cristalino pensado para cada detalhe da sua experiência
-                musical. Sinta cada batida como se estivesse em um show ao vivo.
-              </p>
-            </div>
+                <button
+                    id="mobile-menu-button"
+                    class="lg:hidden text-white text-2xl p-2 rounded-lg hover:bg-bg-elevated transition duration-300"
+                >
+                    &#9776;
+                </button>
+            </nav>
 
             <div
-              class="p-8 bg-bg-elevated rounded-xl flex flex-col items-center text-center transition duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                id="mobile-menu"
+                class="hidden lg:hidden mt-4 pt-4 border-t border-gray-700 bg-bg-dark"
             >
-              <div
-                class="w-16 h-16 bg-melody-neon-pink rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_5px_rgba(255,0,141,0.3)] animate-pulse"
-              >
-                <i class="fa-solid fa-list-ul text-bg-dark text-2xl"></i>
-              </div>
-              <h3 class="font-poppins text-2xl font-bold text-white mb-2">
-                Playlists Inteligentes
-              </h3>
-              <p class="font-body text-text-secondary">
-                Listas personalizadas que se adaptam ao seu gosto e humor. Sua
-                trilha sonora perfeita, criada sob medida para cada momento.
-              </p>
-            </div>
+                <div class="flex flex-col space-y-3">
+                    <a
+                        href="#sobre"
+                        class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
+                    >
+                        Sobre
+                    </a>
+                    <a
+                        href="#funcionalidades"
+                        class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
+                    >
+                        Funcionalidades
+                    </a>
+                    <a
+                        href="#depoimentos"
+                        class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
+                    >
+                        Depoimentos
+                    </a>
+                    <a
+                        href="#contato"
+                        class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-neon-pink transition duration-300"
+                    >
+                        Contato
+                    </a>
 
+                    <div class="flex flex-col space-y-3 pt-3">
+                        <button
+                            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-white bg-bg-elevated text-center hover:text-melody-complement-orange transition duration-300"
+                        >
+                            Login
+                        </button>
+                        <button
+                            class="px-4 py-3 text-base font-body font-semibold rounded-lg text-bg-dark bg-white text-center hover:bg-melody-complement-orange transition duration-300"
+                        >
+                            Sign up
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col space-y-1">
+                        <button
+                            class="px-4 py-3 text-base font-body font-semibold rounded-lg bg-melody-neon-pink text-bg-dark mt-4 hover:bg-melody-complement-orange hover:text-white"
+                        >
+                            Baixe o App!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4">
+            <!---- Seção sobre -->
+            <section id="sobre">
+                <div class="text-center mb-12">
+                    <h1
+                        class="text-4xl font-poppins font-semibold text-melody-complement-orange"
+                    >
+                        Melodia <br />
+                        <span
+                            class="text-melody-neon-pink font-poppins font-normal"
+                            >Sua música, Sua forma</span
+                        >
+                    </h1>
+                    <p
+                        class="mt-4 text-lg md:text-x1 font-body text-text-secondary mx-auto"
+                    >
+                        Melodia é a plataforma de streaming para a nova
+                        geração.<br />
+                        Qualidade de som superior e um radar inteligente que te
+                        conecta a novos artistas à playlist perfeita para cada
+                        momento da sua vida.
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <div class="relative group">
+                        <button
+                            id="left-arrow"
+                            class="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-melody-neon-pink text-bg-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        >
+                            <svg
+                                class="h-5 w-5 fill-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512"
+                            >
+                                <path
+                                    d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+                                />
+                            </svg>
+                        </button>
+
+                        <div
+                            id="carousel-container"
+                            class="flex space-x-6 overflow-x-auto lg:overflow-x-hidden px-4 md:px-0 minimalist-scrollbar pb-2"
+                        >
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/sadealbumcover1.jpeg"
+                                        alt="Sade - Love Deluxe"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/illitbombcover.jpeg"
+                                        alt="ILLIT - bomb"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/fromZero.jpeg"
+                                        alt="Linkin Park - From Zero"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/cortisDebut.jpeg"
+                                        alt="CORTIS - COLOR OUTSIDE THE LINES"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/aespaArmageddon.jpeg"
+                                        alt="aespa - Armageddon"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/jennieRuby.jpeg"
+                                        alt="JENNIE - Ruby"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-48 md:w-64">
+                                <div class="relative w-full aspect-square">
+                                    <img
+                                        src="/img/twiceWithYouth.jpg"
+                                        alt="TWICE - With You-th"
+                                        class="absolute inset-0 w-full h-full rounded-lg shadow-lg object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            id="right-arrow"
+                            class="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-melody-neon-pink text-bg-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        >
+                            <svg
+                                class="h-5 w-5 fill-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512"
+                            >
+                                <path
+                                    d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-8 flex justify-center">
+                        <button
+                            class="px-6 py-2 text-sm font-body font-semibold rounded-full bg-melody-neon-pink text-white hover:bg-melody-complement-orange hover:text-bg-dark transition duration-300 shadow-lg"
+                        >
+                            OUVIR AGORA!
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção funcionalidades-->
+            <section id="funcionalidades" class="mt-24 mb-16 px-4">
+                <div>
+                    <div class="container mx-auto">
+                        <h2
+                            class="font-poppins text-4xl md:text-5xl font-bold text-white mb-8 text-center"
+                        >
+                            Experimente a
+                            <span
+                                class="font-title text-melody-complement-orange font-bold text-4xl md:text-6xl"
+                                >Melodia</span
+                            >
+                        </h2>
+                        <p
+                            class="text-center text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto mb-12"
+                        >
+                            Descubra uma interface intuitiva e recursos
+                            inovadores que transformarão sua maneira de ouvir
+                            música.
+                        </p>
+                        <div class="flex justify-center">
+                            <img
+                                src="/img/appMelodiaDesign.png"
+                                alt="Captura de tela do aplicativo Melodia"
+                                class="rounded-lg shadow-xl max-w-full h-auto md:max-w-4xl"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="container mx-auto">
+                    <h2
+                        class="font-poppins text-4xl md:text-5xl font-bold text-white mb-4 text-center"
+                    >
+                        As Funcionalidades que<br class="lg:hidden" />
+                        <span
+                            class="font-title font-bold text-melody-complement-orange"
+                            >Você Vai Amar</span
+                        >
+                    </h2>
+                    <p
+                        class="text-center text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto mb-12"
+                    >
+                        Descubra uma nova forma de ouvir música com as
+                        ferramentas exclusivas do Melodia.
+                    </p>
+
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
+                        <div
+                            class="p-8 bg-bg-elevated rounded-xl flex flex-col items-center text-center transition duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                        >
+                            <div
+                                class="w-16 h-16 bg-melody-neon-pink rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_5px_rgba(255,0,141,0.3)] animate-pulse"
+                            >
+                                <i
+                                    class="fa-solid fa-headphones text-bg-dark text-2xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="font-poppins text-2xl font-bold text-white mb-2"
+                            >
+                                Qualidade de Som Superior
+                            </h3>
+                            <p class="font-body text-text-secondary">
+                                Áudio cristalino pensado para cada detalhe da
+                                sua experiência musical. Sinta cada batida como
+                                se estivesse em um show ao vivo.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 bg-bg-elevated rounded-xl flex flex-col items-center text-center transition duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                        >
+                            <div
+                                class="w-16 h-16 bg-melody-neon-pink rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_5px_rgba(255,0,141,0.3)] animate-pulse"
+                            >
+                                <i
+                                    class="fa-solid fa-list-ul text-bg-dark text-2xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="font-poppins text-2xl font-bold text-white mb-2"
+                            >
+                                Playlists Inteligentes
+                            </h3>
+                            <p class="font-body text-text-secondary">
+                                Listas personalizadas que se adaptam ao seu
+                                gosto e humor. Sua trilha sonora perfeita,
+                                criada sob medida para cada momento.
+                            </p>
+                        </div>
+
+                        <div
+                            class="p-8 bg-bg-elevated rounded-xl flex flex-col items-center text-center transition duration-300 hover:scale-[1.02] hover:shadow-2xl col-span-1 sm:col-span-2 lg:col-span-1"
+                        >
+                            <div
+                                class="w-16 h-16 bg-melody-neon-pink rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_5px_rgba(255,0,141,0.3)] animate-pulse"
+                            >
+                                <i
+                                    class="fa-solid fa-compass text-bg-dark text-2xl"
+                                ></i>
+                            </div>
+                            <h3
+                                class="font-poppins text-2xl font-bold text-white mb-2"
+                            >
+                                Radar de Descobertas
+                            </h3>
+                            <p class="font-body text-text-secondary">
+                                Explore novos artistas e músicas que combinam
+                                com você. Surpreenda-se com músicas novas que
+                                parecem ter sido feitas para você.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção das depoimentos -->
+            <section id="depoimentos">
+                <div class="px-8 sm:px-8 md:px-16 lg:px-32 mt-12 mb-16">
+                    <div class="grid grid-cols-3 text-center">
+                        <div class="relative px-2">
+                            <div class="text-white text-[50px]">45+</div>
+                            <div class="text-text-secondary">
+                                Clientes contentes
+                            </div>
+
+                            <div
+                                class="absolute inset-y-0 right-0 w-0.5 bg-gradient-to-t from-transparent via-gray-400 to-transparent"
+                            ></div>
+                        </div>
+                        <div class="relative">
+                            <div class="text-white text-[50px]">5k+</div>
+                            <div class="text-text-secondary">
+                                Horas gastas na criação
+                            </div>
+
+                            <div
+                                class="absolute inset-y-0 right-0 w-0.5 bg-gradient-to-t from-transparent via-gray-400 to-transparent"
+                            ></div>
+                        </div>
+                        <div class="">
+                            <div class="text-white text-[50px]">4.8</div>
+                            <div class="text-text-secondary">
+                                Média de review
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-sm text-melody-complement-orange">
+                    <i class="fa-solid fa-star"></i>
+                    COMENTÁRIOS
+                </div>
+
+                <h1 class="text-3xl text-white pb-14 text-center">
+                    O que nossos clientes falam
+                </h1>
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pb-10"
+                >
+                    <div
+                        class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                    >
+                        <div class="flex items-center space-x-4">
+                            <img
+                                class="w-12 h-12 rounded-full"
+                                src="./img/emily.jpg"
+                                alt="Foto de Perfil"
+                            />
+                            <div>
+                                <div
+                                    class="text-melody-complement-orange font-semibold"
+                                >
+                                    Emily Clark
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    Cantora e Compositora
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-300">
+                            "A ferramenta de distribuição do MelodiaApp me
+                            ajudou a alcançar milhões de novos ouvintes. A
+                            interface é intuitiva e o suporte ao artista é de
+                            primeira. Finalmente, um app que valoriza a criação
+                            de conteúdo!"
+                        </p>
+                        <div class="mt-4 text-gray-400 text-xs">
+                            22 de Janeiro de 2025
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                    >
+                        <div class="flex items-center space-x-4">
+                            <img
+                                class="w-12 h-12 rounded-full"
+                                src="./img/leo.jpg"
+                                alt="Foto de Perfil"
+                            />
+                            <div>
+                                <div
+                                    class="text-melody-complement-orange font-semibold"
+                                >
+                                    Leo Vargas
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    Produtor de Podcast
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-300">
+                            "Mudar meu podcast para o MelodiaApp foi a melhor
+                            decisão. A qualidade de áudio é impecável e a
+                            integração com as playlists de música é um
+                            diferencial. Minha audiência cresceu
+                            exponencialmente desde então."
+                        </p>
+                        <div class="mt-4 text-gray-400 text-xs">
+                            10 de Fevereiro de 2025
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                    >
+                        <div class="flex items-center space-x-4">
+                            <img
+                                class="w-12 h-12 rounded-full"
+                                src="./img/mariana.jpg"
+                                alt="Foto de Perfil"
+                            />
+                            <div>
+                                <div
+                                    class="text-melody-complement-orange font-semibold"
+                                >
+                                    Mariana Silva
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    Crítica Musical
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-300">
+                            "A curadoria do MelodiaApp é surpreendente. Ele me
+                            apresenta a artistas independentes que eu jamais
+                            encontraria em outros lugares. É uma plataforma que
+                            realmente entende de música."
+                        </p>
+                        <div class="mt-4 text-gray-400 text-xs">
+                            05 de Março de 2025
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                    >
+                        <div class="flex items-center space-x-4">
+                            <img
+                                class="w-12 h-12 rounded-full"
+                                src="./img/alex.jpg"
+                                alt="Foto de Perfil"
+                            />
+                            <div>
+                                <div
+                                    class="text-melody-complement-orange font-semibold"
+                                >
+                                    Alex Rivas
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    DJ e Produtor
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-300">
+                            "A qualidade de streaming do MelodiaApp é superior.
+                            Consigo mixar e testar faixas em alta fidelidade. O
+                            modo offline é um salva-vidas nas minhas viagens."
+                        </p>
+                        <div class="mt-4 text-gray-400 text-xs">
+                            18 de Março de 2025
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                    >
+                        <div class="flex items-center space-x-4">
+                            <img
+                                class="w-12 h-12 rounded-full"
+                                src="./img/sofia.jpg"
+                                alt="Foto de Perfil"
+                            />
+                            <div>
+                                <div
+                                    class="text-melody-complement-orange font-semibold"
+                                >
+                                    Sofia Mendes
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    Apreciadora de Música
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-300">
+                            "Adoro a funcionalidade de criar playlists
+                            colaborativas. Eu e meus amigos passamos horas
+                            descobrindo novas músicas juntos. A experiência
+                            social no MelodiaApp é fantástica."
+                        </p>
+                        <div class="mt-4 text-gray-400 text-xs">
+                            29 de Abril de 2025
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
+                    >
+                        <div class="flex items-center space-x-4">
+                            <img
+                                class="w-12 h-12 rounded-full"
+                                src="./img/carlos.jpg"
+                                alt="Foto de Perfil"
+                            />
+                            <div>
+                                <div
+                                    class="text-melody-complement-orange font-semibold"
+                                >
+                                    Carlos Almeida
+                                </div>
+                                <div class="text-gray-400 text-sm">
+                                    Gerente de Banda
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-300">
+                            "O MelodiaApp é a plataforma do futuro para
+                            artistas. O painel de dados é detalhado e me ajuda a
+                            entender onde nossa música está sendo ouvida. Nossos
+                            shows estão sempre lotados graças a isso."
+                        </p>
+                        <div class="mt-4 text-gray-400 text-xs">
+                            15 de Maio de 2025
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario -->
+            <section id="contato" class="mt-24 mb-16 px-4">
+                <div class="container mx-auto max-w-4xl">
+                    <div class="text-center mb-12">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-melody-neon-pink to-melody-complement-orange mb-6 shadow-lg shadow-melody-neon-pink/30"
+                        >
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <h2
+                            class="font-poppins text-4xl md:text-5xl font-bold text-white mb-4"
+                        >
+                            Entre em
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-melody-neon-pink to-melody-complement-orange"
+                                >Contato</span
+                            >
+                        </h2>
+                        <p
+                            class="text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto"
+                        >
+                            Tem alguma dúvida ou sugestão? Entre em contato
+                            conosco e fique por dentro das novidades!
+                        </p>
+                    </div>
+
+                    <form
+                        id="formulario-contato"
+                        class="bg-gradient-to-br from-bg-elevated to-bg-dark rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-800 relative overflow-hidden"
+                    >
+                        <div
+                            class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-melody-neon-pink/10 blur-xl"
+                        ></div>
+                        <div
+                            class="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-melody-complement-orange/10 blur-xl"
+                        ></div>
+
+                        <div
+                            class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 relative z-10"
+                        >
+                            <div class="space-y-2">
+                                <label
+                                    for="nome"
+                                    class="block text-white font-body font-medium mb-2 flex items-center"
+                                >
+                                    <i
+                                        class="fas fa-user mr-2 text-melody-lighter-pink"
+                                    ></i>
+                                    Nome Completo
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="text"
+                                        id="nome"
+                                        name="nome"
+                                        required
+                                        class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500"
+                                        placeholder="Seu nome completo"
+                                    />
+                                    <i
+                                        class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                                    ></i>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    for="email"
+                                    class="block text-white font-body font-medium mb-2 flex items-center"
+                                >
+                                    <i
+                                        class="fas fa-envelope mr-2 text-melody-lighter-pink"
+                                    ></i>
+                                    E-mail
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500"
+                                        placeholder="seu@email.com"
+                                    />
+                                    <i
+                                        class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 relative z-10">
+                            <div class="space-y-2">
+                                <label
+                                    for="assunto"
+                                    class="block text-white font-body font-medium mb-2 flex items-center"
+                                >
+                                    <i
+                                        class="fas fa-tag mr-2 text-melody-lighter-pink"
+                                    ></i>
+                                    Assunto
+                                </label>
+                                <div class="relative">
+                                    <input
+                                        type="text"
+                                        id="assunto"
+                                        name="assunto"
+                                        required
+                                        class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500"
+                                        placeholder="Assunto da sua mensagem"
+                                    />
+                                    <i
+                                        class="fas fa-tag absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 relative z-10">
+                            <div class="space-y-2">
+                                <label
+                                    for="mensagem"
+                                    class="block text-white font-body font-medium mb-2 flex items-center"
+                                >
+                                    <i
+                                        class="fas fa-comment-dots mr-2 text-melody-lighter-pink"
+                                    ></i>
+                                    Mensagem
+                                </label>
+                                <div class="relative">
+                                    <textarea
+                                        id="mensagem"
+                                        name="mensagem"
+                                        rows="5"
+                                        required
+                                        class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500 resize-none"
+                                        placeholder="Escreva sua mensagem aqui..."
+                                    ></textarea>
+                                    <i
+                                        class="fas fa-comment-dots absolute left-3 top-4 transform text-gray-500"
+                                    ></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center relative z-10">
+                            <button
+                                type="submit"
+                                class="px-10 py-4 bg-gradient-to-r from-melody-neon-pink to-melody-complement-orange text-white font-body font-semibold rounded-full hover:from-melody-lighter-pink hover:to-melody-complement-orange transition duration-300 shadow-lg transform hover:scale-105 hover:shadow-xl hover:shadow-melody-neon-pink/30 group relative overflow-hidden"
+                            >
+                                <span
+                                    class="relative z-10 flex items-center justify-center"
+                                >
+                                    <i
+                                        class="fas fa-paper-plane mr-2 transition-transform duration-300 group-hover:translate-x-1"
+                                    ></i>
+                                    Enviar Mensagem
+                                </span>
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition duration-700"
+                                ></div>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div
+                        id="sucesso-formulario"
+                        class="hidden mt-6 p-6 bg-gradient-to-r from-green-900/80 to-green-800/80 text-green-300 rounded-lg text-center border border-green-700 backdrop-blur-sm"
+                    >
+                        <div class="flex items-center justify-center mb-2">
+                            <i
+                                class="fas fa-check-circle text-3xl text-green-400 mr-3"
+                            ></i>
+                            <h3 class="text-xl font-semibold text-green-200">
+                                Mensagem enviada com sucesso!
+                            </h3>
+                        </div>
+                        <p class="text-green-300">
+                            Entraremos em contato em breve. Obrigado!
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-bg-elevated text-text-secondary py-6 mt-12">
             <div
-              class="p-8 bg-bg-elevated rounded-xl flex flex-col items-center text-center transition duration-300 hover:scale-[1.02] hover:shadow-2xl col-span-1 sm:col-span-2 lg:col-span-1"
+                class="container text-center px-12 flex flex-col md:flex-row gap-5 items-center justify-around"
             >
-              <div
-                class="w-16 h-16 bg-melody-neon-pink rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_5px_rgba(255,0,141,0.3)] animate-pulse"
-              >
-                <i class="fa-solid fa-compass text-bg-dark text-2xl"></i>
-              </div>
-              <h3 class="font-poppins text-2xl font-bold text-white mb-2">
-                Radar de Descobertas
-              </h3>
-              <p class="font-body text-text-secondary">
-                Explore novos artistas e músicas que combinam com você.
-                Surpreenda-se com músicas novas que parecem ter sido feitas para
-                você.
-              </p>
+                <div>
+                    <p
+                        class="font-bold mb-2 text-melody-complement-orange text-lg"
+                    >
+                        Nossas Redes
+                    </p>
+                    <ul
+                        class="[&>li:hover]:text-melody-neon-pink [&>li:hover]:scale-105 [&>li]:transition [&>li]:duration-300"
+                    >
+                        <li>
+                            <a href="">X</a>
+                        </li>
+                        <li>
+                            <a href="">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img
+                        src="/img/melodialogo.png"
+                        alt="Logo Melodia"
+                        class="h-8 lg:h-10"
+                    />
+                    <div class="text-4xl font-title font-bold text-white">
+                        Melodia
+                    </div>
+                </div>
+                <div>
+                    <p
+                        class="font-bold mb-3 text-melody-complement-orange text-lg"
+                    >
+                        Links
+                    </p>
+                    <ul
+                        class="[&>li:hover]:text-melody-neon-pink [&>li:hover]:scale-105 [&>li]:transition [&>li]:duration-300"
+                    >
+                        <li><a href="">Acessar app</a></li>
+                        <li><a href="">LGPD</a></li>
+                        <li><a href="">Termos de uso</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <p class="text-sm mt-6 py-4 text-center text-text-secondary">
+                &copy; 2025 Melodia. Todos os direitos reservados.
+            </p>
+        </footer>
 
-      <!-- Parte das avaliações -->
-
-      <section class="px-8 sm:px-8 md:px-16 lg:px-32 mt-12 mb-16">
-        <div class="grid grid-cols-3 text-center">
-          <div class="relative px-2">
-            <div class="text-white text-[50px]">45+</div>
-            <div class="text-text-secondary">Clientes contentes</div>
-
-            <div
-              class="absolute inset-y-0 right-0 w-0.5 bg-gradient-to-t from-transparent via-gray-400 to-transparent"
-            ></div>
-          </div>
-          <div class="relative">
-            <div class="text-white text-[50px]">5k+</div>
-            <div class="text-text-secondary">Horas gastas na criação</div>
-
-            <div
-              class="absolute inset-y-0 right-0 w-0.5 bg-gradient-to-t from-transparent via-gray-400 to-transparent"
-            ></div>
-          </div>
-          <div class="">
-            <div class="text-white text-[50px]">4.8</div>
-            <div class="text-text-secondary">Média de review</div>
-          </div>
-        </div>
-      </section>
-
-      <div class="text-center text-sm text-melody-complement-orange">
-        <i class="fa-solid fa-star"></i>
-        COMENTÁRIOS
-      </div>
-
-      <h1 class="text-3xl text-white pb-14 text-center">
-        O que nossos clientes falam
-      </h1>
-
-      <section
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pb-10"
-      >
-        <div
-          class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-        >
-          <div class="flex items-center space-x-4">
-            <img
-              class="w-12 h-12 rounded-full"
-              src="./img/emily.jpg"
-              alt="Foto de Perfil"
-            />
-            <div>
-              <div class="text-melody-complement-orange font-semibold">
-                Emily Clark
-              </div>
-              <div class="text-gray-400 text-sm">Cantora e Compositora</div>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "A ferramenta de distribuição do MelodiaApp me ajudou a alcançar
-            milhões de novos ouvintes. A interface é intuitiva e o suporte ao
-            artista é de primeira. Finalmente, um app que valoriza a criação de
-            conteúdo!"
-          </p>
-          <div class="mt-4 text-gray-400 text-xs">22 de Janeiro de 2025</div>
-        </div>
-
-        <div
-          class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-        >
-          <div class="flex items-center space-x-4">
-            <img
-              class="w-12 h-12 rounded-full"
-              src="./img/leo.jpg"
-              alt="Foto de Perfil"
-            />
-            <div>
-              <div class="text-melody-complement-orange font-semibold">
-                Leo Vargas
-              </div>
-              <div class="text-gray-400 text-sm">Produtor de Podcast</div>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "Mudar meu podcast para o MelodiaApp foi a melhor decisão. A
-            qualidade de áudio é impecável e a integração com as playlists de
-            música é um diferencial. Minha audiência cresceu exponencialmente
-            desde então."
-          </p>
-          <div class="mt-4 text-gray-400 text-xs">10 de Fevereiro de 2025</div>
-        </div>
-
-        <div
-          class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-        >
-          <div class="flex items-center space-x-4">
-            <img
-              class="w-12 h-12 rounded-full"
-              src="./img/mariana.jpg"
-              alt="Foto de Perfil"
-            />
-            <div>
-              <div class="text-melody-complement-orange font-semibold">
-                Mariana Silva
-              </div>
-              <div class="text-gray-400 text-sm">Crítica Musical</div>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "A curadoria do MelodiaApp é surpreendente. Ele me apresenta a
-            artistas independentes que eu jamais encontraria em outros lugares.
-            É uma plataforma que realmente entende de música."
-          </p>
-          <div class="mt-4 text-gray-400 text-xs">05 de Março de 2025</div>
-        </div>
-
-        <div
-          class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-        >
-          <div class="flex items-center space-x-4">
-            <img
-              class="w-12 h-12 rounded-full"
-              src="./img/alex.jpg"
-              alt="Foto de Perfil"
-            />
-            <div>
-              <div class="text-melody-complement-orange font-semibold">
-                Alex Rivas
-              </div>
-              <div class="text-gray-400 text-sm">DJ e Produtor</div>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "A qualidade de streaming do MelodiaApp é superior. Consigo mixar e
-            testar faixas em alta fidelidade. O modo offline é um salva-vidas
-            nas minhas viagens."
-          </p>
-          <div class="mt-4 text-gray-400 text-xs">18 de Março de 2025</div>
-        </div>
-
-        <div
-          class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-        >
-          <div class="flex items-center space-x-4">
-            <img
-              class="w-12 h-12 rounded-full"
-              src="./img/sofia.jpg"
-              alt="Foto de Perfil"
-            />
-            <div>
-              <div class="text-melody-complement-orange font-semibold">
-                Sofia Mendes
-              </div>
-              <div class="text-gray-400 text-sm">Apreciadora de Música</div>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "Adoro a funcionalidade de criar playlists colaborativas. Eu e meus
-            amigos passamos horas descobrindo novas músicas juntos. A
-            experiência social no MelodiaApp é fantástica."
-          </p>
-          <div class="mt-4 text-gray-400 text-xs">29 de Abril de 2025</div>
-        </div>
-
-        <div
-          class="p-6 bg-zinc-800 rounded-xl transition duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-        >
-          <div class="flex items-center space-x-4">
-            <img
-              class="w-12 h-12 rounded-full"
-              src="./img/carlos.jpg"
-              alt="Foto de Perfil"
-            />
-            <div>
-              <div class="text-melody-complement-orange font-semibold">
-                Carlos Almeida
-              </div>
-              <div class="text-gray-400 text-sm">Gerente de Banda</div>
-            </div>
-          </div>
-          <p class="mt-4 text-gray-300">
-            "O MelodiaApp é a plataforma do futuro para artistas. O painel de
-            dados é detalhado e me ajuda a entender onde nossa música está sendo
-            ouvida. Nossos shows estão sempre lotados graças a isso."
-          </p>
-          <div class="mt-4 text-gray-400 text-xs">15 de Maio de 2025</div>
-        </div>
-      </section>
-    </div>
-
-    <!-- Formulario -->
-    <section class="mt-24 mb-16 px-4">
-      <div class="container mx-auto max-w-4xl">
-        <div class="text-center mb-12">
-          <div
-            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-melody-neon-pink to-melody-complement-orange mb-6 shadow-lg shadow-melody-neon-pink/30"
-          >
-            <i class="fas fa-envelope text-white text-2xl"></i>
-          </div>
-          <h2
-            class="font-poppins text-4xl md:text-5xl font-bold text-white mb-4"
-          >
-            Entre em
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-melody-neon-pink to-melody-complement-orange"
-              >Contato</span
-            >
-          </h2>
-          <p
-            class="text-lg md:text-xl font-body text-text-secondary max-w-2xl mx-auto"
-          >
-            Tem alguma dúvida ou sugestão? Entre em contato conosco e fique por
-            dentro das novidades!
-          </p>
-        </div>
-
-        <form
-          id="formulario-contato"
-          class="bg-gradient-to-br from-bg-elevated to-bg-dark rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-800 relative overflow-hidden"
-        >
-          <div
-            class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-melody-neon-pink/10 blur-xl"
-          ></div>
-          <div
-            class="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-melody-complement-orange/10 blur-xl"
-          ></div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 relative z-10">
-            <div class="space-y-2">
-              <label
-                for="nome"
-                class="block text-white font-body font-medium mb-2 flex items-center"
-              >
-                <i class="fas fa-user mr-2 text-melody-lighter-pink"></i>
-                Nome Completo
-              </label>
-              <div class="relative">
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  required
-                  class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500"
-                  placeholder="Seu nome completo"
-                />
-                <i
-                  class="fas fa-user absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                ></i>
-              </div>
-            </div>
-            <div class="space-y-2">
-              <label
-                for="email"
-                class="block text-white font-body font-medium mb-2 flex items-center"
-              >
-                <i class="fas fa-envelope mr-2 text-melody-lighter-pink"></i>
-                E-mail
-              </label>
-              <div class="relative">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500"
-                  placeholder="seu@email.com"
-                />
-                <i
-                  class="fas fa-envelope absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                ></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6 relative z-10">
-            <div class="space-y-2">
-              <label
-                for="assunto"
-                class="block text-white font-body font-medium mb-2 flex items-center"
-              >
-                <i class="fas fa-tag mr-2 text-melody-lighter-pink"></i>
-                Assunto
-              </label>
-              <div class="relative">
-                <input
-                  type="text"
-                  id="assunto"
-                  name="assunto"
-                  required
-                  class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500"
-                  placeholder="Assunto da sua mensagem"
-                />
-                <i
-                  class="fas fa-tag absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                ></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="mb-6 relative z-10">
-            <div class="space-y-2">
-              <label
-                for="mensagem"
-                class="block text-white font-body font-medium mb-2 flex items-center"
-              >
-                <i
-                  class="fas fa-comment-dots mr-2 text-melody-lighter-pink"
-                ></i>
-                Mensagem
-              </label>
-              <div class="relative">
-                <textarea
-                  id="mensagem"
-                  name="mensagem"
-                  rows="5"
-                  required
-                  class="w-full px-4 py-3 pl-10 bg-bg-dark/70 border border-gray-700 rounded-lg text-white font-body focus:outline-none focus:ring-2 focus:ring-melody-neon-pink transition duration-300 placeholder-gray-500 resize-none"
-                  placeholder="Escreva sua mensagem aqui..."
-                ></textarea>
-                <i
-                  class="fas fa-comment-dots absolute left-3 top-4 transform text-gray-500"
-                ></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center relative z-10">
-            <button
-              type="submit"
-              class="px-10 py-4 bg-gradient-to-r from-melody-neon-pink to-melody-complement-orange text-white font-body font-semibold rounded-full hover:from-melody-lighter-pink hover:to-melody-complement-orange transition duration-300 shadow-lg transform hover:scale-105 hover:shadow-xl hover:shadow-melody-neon-pink/30 group relative overflow-hidden"
-            >
-              <span class="relative z-10 flex items-center justify-center">
-                <i
-                  class="fas fa-paper-plane mr-2 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                Enviar Mensagem
-              </span>
-              <div
-                class="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition duration-700"
-              ></div>
-            </button>
-          </div>
-        </form>
-
-        <div
-          id="sucesso-formulario"
-          class="hidden mt-6 p-6 bg-gradient-to-r from-green-900/80 to-green-800/80 text-green-300 rounded-lg text-center border border-green-700 backdrop-blur-sm"
-        >
-          <div class="flex items-center justify-center mb-2">
-            <i class="fas fa-check-circle text-3xl text-green-400 mr-3"></i>
-            <h3 class="text-xl font-semibold text-green-200">
-              Mensagem enviada com sucesso!
-            </h3>
-          </div>
-          <p class="text-green-300">
-            Entraremos em contato em breve. Obrigado!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <script src="/src/js/script.js"></script>
-  </body>
+        <script src="/src/js/script.js"></script>
+    </body>
 </html>
